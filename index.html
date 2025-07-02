@@ -41,6 +41,32 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
       color: #fff;
     }
+
+    /* Card hover zoom effect */
+    .video-card {
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .video-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Make YouTube iframe fully responsive */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   </style>
 
   </head>
@@ -67,7 +93,7 @@
           <a class="nav-link" href="#art">Art</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#stream">Stream</a>
+          <a class="nav-link" href="#music">Music</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#download">Download</a>
@@ -176,22 +202,90 @@
   </div>
 
 
-<div class="container-fluid h-100" id="stream" style="padding-left:0;padding-right:0;">
-  <div class="row h-100">
-    <div class="col-12">
-      <div class="bg" style="background-image: url('./assets/img/bg/01.jpg'); background-size: cover; background-position: left; height: 100vh;">
-        <div class="d-flex flex-column justify-content-center align-items-center h-100 text-center text-white">
-          <h1 class="display-2" style="font-weight: bold; color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">
-            Stream
-          </h1>
-          <p style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-            <br><b>WIP</b>
-          </p>
+ <div class="gallery-section d-flex justify-content-center align-items-center flex-column text-center" id="music">
+    <h1 class="mb-4">YouTube Song Gallery</h1>
+
+    <!-- Optional overlay for better readability -->
+    <div class="container gallery-overlay">
+      <div class="row">
+
+        <!-- Video Card 1 -->
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/CyzdIzCmDig" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Like I Want It ft. Eleanor Forte Lite 【SynthV Original】</h5>
+            </div>
+          </div>
         </div>
+
+        <!-- Video Card -->
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/bwkBUGhu9Og" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">【Eleanor Forte】It only rains in Glasgow【SynthV Original】</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Card -->
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Song Title 3</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Card -->
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Song Title 4</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Card -->
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Song Title 5</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Card -->
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Song Title 6</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more video cards as needed -->
+
       </div>
     </div>
   </div>
-</div>
 
 
 <div class="container-fluid h-100" id="download" style="padding-left:0;padding-right:0;">
