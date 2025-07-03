@@ -179,6 +179,36 @@
       }
     }
 
+/* COUNTDOWN TIMER */
+    .outer-box {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 15px;
+      display: inline-block;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .inner-box {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 15px 30px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .countdown {
+      font-size: 2.5rem;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .countdown {
+        font-size: 1.8rem;
+        padding: 10px 20px;
+      }
+    }
   </style>
 
   </head>
@@ -241,8 +271,18 @@
             Submit your songs and artwork on our Discord Server in the #save-eleanor-forte channel!</b>
             <a href="https://discord.gg/eJ3gp6Pe"><img src="./assets/img/icons/disc2.png" width="42" alt="Save Eleanor"></a>   
       </p>
+
+  <div class="outer-box">
+    <div class="inner-box">
+      <div id="countdown" class="countdown">Loading...</div>
+    </div>
+  </div>
+
 </div>
 <!-- END OF ABOUT SECTION -->
+
+
+  <!-- Countdown Container -->
 
 
 <!-- START OF GALLERY SECTION -->
@@ -572,6 +612,31 @@
 
     // Initialize
     loadNews(currentPage);
+  </script>
+
+    <!-- Countdown Script -->
+  <script>
+    // Set target date
+    const targetDate = new Date("2025-08-18T00:00:00").getTime();
+
+    // Update countdown every second
+    const countdownTimer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById("countdown").innerHTML = "Time's Up!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
   </script>
 
   </body>
