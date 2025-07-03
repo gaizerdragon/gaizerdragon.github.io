@@ -222,26 +222,26 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-  		<a class="navbar-brand" href='#'>
-  			<img src="./assets/img/icons/logo.png" alt="Save Eleanor Forte">
-  		</a>  	 
+      <a class="navbar-brand" href='#'>
+        <img src="./assets/img/icons/logo.png" alt="Save Eleanor Forte">
+      </a>     
 
     <div class="collapse navbar-collapse container-fluid justify-content-center" id="navbarTogglerDemo03">
       <ul class="navbar-nav mb-2 mb-lg-0 fs-4">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#about">About</a>
+          <a class="nav-link" href="index.html#about">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="browse-art.html">Art</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="browse-song.html">Music</a>
+          <a class="nav-link active" aria-current="page" href="#">Music</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://drive.google.com/drive/folders/1vP9KyuqeJ0-9JCSE7ZpAKGM6A8Gb-gkH?usp=sharing">Download</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#news">News</a>
+          <a class="nav-link" href="index.html#news">News</a>
         </li>
       </ul>
     </div>
@@ -255,99 +255,6 @@
   </div>
 </nav>
 <!-- END OF NAVBAR -->
-
-<!-- START OF ABOUT SECTION -->
-<div class="d-flex justify-content-center align-items-center flex-column text-center video-background video-background-left" id="about" style="padding-left:0;padding-right:0;">
-
-<video autoplay muted loop>
-    <source src="./assets/img/bg/01.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-    <h1 class="display-2" style="font-weight: bold; color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">#SaveEleanorForte</h1>
-      <p style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-            <br><b>Eleanor Forte's birthday is on 8/18 - MAKE ART! MUSIC! BE ALIVE!<br>
-            Be part of the celebration! <br>
-            Submit your songs and artwork on our Discord Server in the #save-eleanor-forte channel!</b>
-            <a href="https://discord.gg/eJ3gp6Pe"><img src="./assets/img/icons/disc2.png" width="42" alt="Save Eleanor"></a>   
-      </p>
-
-  <div class="outer-box">
-    <div class="inner-box">
-      <div id="countdown" class="countdown">Loading...</div>
-    </div>
-  </div>
-
-</div>
-<!-- END OF ABOUT SECTION -->
-
-
-  <!-- Countdown Container -->
-
-
-<!-- START OF GALLERY SECTION -->
- <div class="gallery-section d-flex justify-content-center align-items-center flex-column text-center video-background" id="art" >
-
-<video autoplay muted loop>
-    <source src="./assets/img/bg/03.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-    <h1 class="mb-4">Art Gallery</h1>
-
-    <!-- Optional overlay for better image contrast -->
-    <div class="container gallery-overlay">
-      <div class="row" data-masonry='{"percentPosition": true }'>
-
-        <!-- Art Card 1 -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <a href="./assets/img/gallery/1-gaizer.jpg" data-lightbox="gallery" data-title="Artwork 1">
-            <div class="card">
-              <img src="./assets/img/gallery/1-gaizer.jpg" class="card-img-top gallery-img" alt="Artwork 1">
-            </div>
-          </a>
-          <div class="artist-name">
-            <a href="https://x.com/GaizerDragon">Artist: Gaizer Dragon</a>
-          </div>
-        </div>
-
-        <!-- Art Card -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <a href="./assets/img/gallery/2-llunaariaa.jpg" data-lightbox="gallery" data-title="Artwork 2">
-            <div class="card">
-              <img src="./assets/img/gallery/2-llunaariaa.jpg" class="card-img-top gallery-img" alt="Artwork 2">
-            </div>
-          </a>
-          <div class="artist-name">
-            <a href="https://x.com/llunaariaa">Artist: X/Twitter - llunaariaa</a>
-            <br>
-            <a href="https://toyhou.se/llunaariaa">Toyhouse - llunaariaa</a>
-          </div>
-        </div>
-
-        <!-- Art Card -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <a href="./assets/img/gallery/3-phobos.jpg" data-lightbox="gallery" data-title="Artwork 3">
-            <div class="card">
-              <img src="./assets/img/gallery/3-phobos.jpg" class="card-img-top gallery-img" alt="Artwork 3">
-            </div>
-          </a>
-          <div class="artist-name">
-            <a href="https://x.com/Phobos__Anomaly">Artist: X/Twitter - Phobos Anomaly</a>
-            <br>
-            <a href="https://bsky.app/profile/phobosanomaly.bsky.social">Bluesky - Phobos Anomaly</a>
-          </div>
-        </div>
-
-        <!-- Add more cards here -->
-
-    <div class="justify-content-center align-items-center flex-column text-center ">
-        <br><a href="browse-art.html"><button type="button" class="btn btn-success btn-lg">Browse Entire Art Catalog</button></a>
-    </div>
-
-      </div>
-    </div>
-  </div>
-<!-- END OF GALLERY SECTION -->
 
 <!-- START OF VIDEO SECTION -->
  <div class="gallery-section2 d-flex justify-content-center align-items-center flex-column text-center video-background" id="music">
@@ -400,10 +307,29 @@
           </div>
         </div>
 
+        <!-- Video Card -->
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/haKcGgKwT9U" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">ELEANOR_LIVES_FOREVER_!!1! / ft.Eleanor Forte</h5>
+            </div>
+          </div>
+        </div>
 
-    <div class="justify-content-center align-items-center flex-column text-center ">
-        <br><a href="browse-song.html"><button type="button" class="btn btn-success btn-lg">Browse Entire Song Catalog</button></a>
-    </div>
+        <!-- Video Card -->
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/k1FI3az99Iw" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">BIRDBRAIN【Eleanor Forte AI & Lite SynthVカバー Cover】</h5>
+            </div>
+          </div>
+        </div>
 
         <!-- Add more video cards here -->
 
@@ -411,121 +337,6 @@
     </div>
   </div>
 <!-- END OF VIDEO SECTION -->
-
-<!-- START OF DOWNLOAD SECTION -->
-  <div class="download-section" id="download">
-    <h1 class="text-center mb-4">Downloads</h1>
-
-    <!-- Bootstrap Carousel -->
-    <div id="artCarousel" class="carousel slide" data-bs-ride="carousel">
-
-      <!-- Carousel Indicators -->
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#artCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#artCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#artCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#artCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#artCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-      </div>
-
-      <!-- Carousel Items -->
-      <div class="carousel-inner">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <img src="./assets/img/bg/dl-01.jpg" class="d-block w-100" alt="Artwork 1">
-          <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;"> 
-            <h5>Size: 1080x1920px</h5>
-            <p></p>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <img src="./assets/img/bg/dl-02.jpg" class="d-block w-100" alt="Artwork 2">
-          <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-            <h5>Size: 1080x1920px</h5>
-            <p></p>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <img src="./assets/img/bg/dl-03.jpg" class="d-block w-100" alt="Artwork 3">
-          <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-            <h5>Size: 360x360px</h5>
-            <p></p>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <img src="./assets/img/bg/dl-04.jpg" class="d-block w-100" alt="Artwork 3">
-          <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-            <h5>Size: 200x200px</h5>
-            <p></p>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <img src="./assets/img/bg/dl-05.jpg" class="d-block w-100" alt="Artwork 3">
-          <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-            <h5>For PC and Mac</h5>
-            <p></p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#artCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-
-      <button class="carousel-control-next" type="button" data-bs-target="#artCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-
-    </div>
-    <div class="justify-content-center align-items-center flex-column text-center ">
-        <br><a href="https://drive.google.com/drive/folders/1vP9KyuqeJ0-9JCSE7ZpAKGM6A8Gb-gkH?usp=sharing"><button type="button" class="btn btn-success btn-lg">Google Drive - Download</button></a>
-    </div>
-  </div>
-<!-- END OF DOWNLOAD SECTION -->
-
-<!-- START OF NEWS SECTION -->
-<div class="video-background video-background-right">
-<video autoplay muted loop>
-    <source src="./assets/img/bg/05.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="container py-5" id="news">
-    <h1 class="text-center mb-4">Latest News</h1>
-
-    <!-- News List -->
-    <div id="news-container" class="list-group mb-4">
-      <!-- News items will be loaded here -->
-    </div>
-
-    <!-- Pagination -->
-    <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center">
-        <li class="page-item" id="prev-btn">
-          <a class="page-link" onclick="changePage(currentPage - 1)">Previous</a>
-        </li>
-        <li class="page-item" id="next-btn">
-          <a class="page-link" onclick="changePage(currentPage + 1)">Next</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</div>
-<!-- END OF NEWS SECTION -->
-
-
 
 <!-- START OF FOOTER -->
 <div class="container"> 
