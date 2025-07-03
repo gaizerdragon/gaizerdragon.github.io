@@ -12,7 +12,7 @@
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <style>
 /* ART GALLERY */
-    /* Gallery Background */
+    
     .gallery-section {
       background: url('./assets/img/bg/02.jpg') no-repeat center center;
       background-size: cover;
@@ -25,12 +25,14 @@
       min-height: 100vh;
       padding: 60px 0;
     }
-    .news-section {
-      background: url('./assets/img/bg/05.jpg') no-repeat center center;
+    .download-section {
+      background: url('./assets/img/bg/04.jpg') no-repeat center center;
       background-size: cover;
       min-height: 100vh;
       padding: 60px 0;
     }
+
+ */
 
     /* Optional: Semi-transparent overlay for readability */
     .gallery-overlay {
@@ -114,6 +116,66 @@
       font-size: 0.9rem;
       color: gray;
     }
+
+/* VIDEO */
+ .video-background {
+  position: relative;
+  width: 100%;
+/*  background-size: cover; */
+  object-fit: cover;
+  object-position: left center;
+  min-height: 100vh;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.video-background-left video {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-25%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+.video-background-right video {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-60%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+.video-background .content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+    /* Carousel Image Styling */
+    .carousel-item img {
+      width: 100%;
+      height: 800px;
+      border-radius: 10px;
+      padding: 0px 20px;
+    }
+
+    /* Responsive Image Height on Small Screens */
+    @media (max-width: 768px) {
+      .carousel-item img {
+        height: 300px;
+      }
+    }
+
   </style>
 
   </head>
@@ -151,42 +213,42 @@
       </ul>
     </div>
 
-
       <div class="navbar-brand">
         <a href="https://www.youtube.com/playlist?list=PLZ6_9ivx4jUfyCiXRVcPmsTppp9tMPfp7"><img src="./assets/img/icons/yt.png" height="42" width="42" alt="Save Eleanor"></a>   
         <a href="https://discord.gg/eJ3gp6Pe"><img src="./assets/img/icons/disc.png" width="42" alt="Save Eleanor"></a>   
         <a href="https://x.com/GaizerDragon"><img src="./assets/img/icons/x.png" width="42" alt="Save Eleanor"></a>
       </div>     
-<!--
-    <span class="navbar-text">
-    </span>
--->
 
   </div>
 </nav>
 <!-- END OF NAVBAR -->
 
-<div class="container-fluid h-100" id="about" style="padding-left:0;padding-right:0;">
-  <div class="row h-100">
-    <div class="col-12">
-      <div class="bg" style="background-image: url('./assets/img/bg/01.jpg'); background-size: cover; background-position: left; height: 100vh;">
-        <div class="d-flex flex-column justify-content-center align-items-center h-100 text-center text-white">
-          <h1 class="display-2" style="font-weight: bold; color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">#SaveEleanorForte</h1>
-          <p style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
+<!-- START OF ABOUT SECTION -->
+<div class="d-flex justify-content-center align-items-center flex-column text-center video-background video-background-left" id="about" style="padding-left:0;padding-right:0;">
+
+<video autoplay muted loop>
+    <source src="./assets/img/bg/01.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+    <h1 class="display-2" style="font-weight: bold; color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">#SaveEleanorForte</h1>
+      <p style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
             <br><b>Eleanor Forte's birthday is on 8/18 - MAKE ART! MUSIC! BE ALIVE!<br>
-              Be part of the celebration! <br>
-              Submit your songs and artwork on our Discord Server in the #save-eleanor-forte channel!</b>
-
-              <a href="https://discord.gg/eJ3gp6Pe"><img src="./assets/img/icons/disc2.png" width="42" alt="Save Eleanor"></a>   
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+            Be part of the celebration! <br>
+            Submit your songs and artwork on our Discord Server in the #save-eleanor-forte channel!</b>
+            <a href="https://discord.gg/eJ3gp6Pe"><img src="./assets/img/icons/disc2.png" width="42" alt="Save Eleanor"></a>   
+      </p>
 </div>
+<!-- END OF ABOUT SECTION -->
 
 
- <div class="gallery-section d-flex justify-content-center align-items-center flex-column text-center" id="art" >
+<!-- START OF GALLERY SECTION -->
+ <div class="gallery-section d-flex justify-content-center align-items-center flex-column text-center video-background" id="art" >
+
+<video autoplay muted loop>
+    <source src="./assets/img/bg/03.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
     <h1 class="mb-4">Art Gallery</h1>
 
     <!-- Optional overlay for better image contrast -->
@@ -195,9 +257,9 @@
 
         <!-- Art Card 1 -->
         <div class="col-sm-6 col-lg-4 mb-4">
-          <a href="./assets/img/gallery/1.jpg" data-lightbox="gallery" data-title="Artwork 1">
+          <a href="./assets/img/gallery/1-gaizer.jpg" data-lightbox="gallery" data-title="Artwork 1">
             <div class="card">
-              <img src="./assets/img/gallery/1.jpg" class="card-img-top gallery-img" alt="Artwork 1">
+              <img src="./assets/img/gallery/1-gaizer.jpg" class="card-img-top gallery-img" alt="Artwork 1">
             </div>
           </a>
           <div class="artist-name">
@@ -219,14 +281,35 @@
           </div>
         </div>
 
-        <!-- Add more cards as needed -->
+        <!-- Art Card -->
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="./assets/img/gallery/3-phobos.jpg" data-lightbox="gallery" data-title="Artwork 3">
+            <div class="card">
+              <img src="./assets/img/gallery/3-phobos.jpg" class="card-img-top gallery-img" alt="Artwork 3">
+            </div>
+          </a>
+          <div class="artist-name">
+            <a href="https://x.com/Phobos__Anomaly">Artist: X/Twitter - Phobos Anomaly</a>
+            <br>
+            <a href="https://bsky.app/profile/phobosanomaly.bsky.social">Bluesky - Phobos Anomaly</a>
+          </div>
+        </div>
+
+        <!-- Add more cards here -->
 
       </div>
     </div>
   </div>
+<!-- END OF GALLERY SECTION -->
 
+<!-- START OF VIDEO SECTION -->
+ <div class="gallery-section2 d-flex justify-content-center align-items-center flex-column text-center video-background" id="music">
 
- <div class="gallery-section2 d-flex justify-content-center align-items-center flex-column text-center" id="music">
+<video autoplay muted loop>
+    <source src="./assets/img/bg/03.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
     <h1 class="mb-4">YouTube Song Gallery</h1>
 
     <!-- Optional overlay for better readability -->
@@ -294,83 +377,103 @@
           </div>
         </div>
 
-        <!-- Add more video cards as needed -->
+        <!-- Add more video cards here -->
 
       </div>
     </div>
   </div>
+<!-- END OF VIDEO SECTION -->
 
+<!-- START OF DOWNLOAD SECTION -->
+  <div class="download-section" id="download">
+    <h1 class="text-center mb-4">Downloads</h1>
 
-<div class="container-fluid h-100" id="download" style="padding-left:0;padding-right:0;">
-  <div class="row h-100">
-    <div class="col-12">
-      <div class="bg" style="background-image: url('./assets/img/bg/04.jpg'); background-size: cover; background-position: left; height: 100vh;">
-        <div class="d-flex flex-column justify-content-center align-items-center h-100 text-center text-white">
-          <h1 class="display-2" style="font-weight: bold; color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">
-            Downloads
-          </h1>
-        <div id="carouselExampleCaptions" class="carousel slide">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <!-- Bootstrap Carousel -->
+    <div id="artCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#artCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#artCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#artCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#artCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#artCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+
+      <!-- Carousel Items -->
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="./assets/img/bg/dl-01.jpg" class="d-block w-100" alt="Artwork 1">
+          <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;"> 
+            <h5>Size: 1080x1920px</h5>
+            <p></p>
           </div>
-          <div class="carousel-inner" style="height:512px;width:912px;">
-            <div class="carousel-item active">
-              <img src="./assets/img/bg/dl-01.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-                <h5>Get your Desktop Wallpaper now!</h5>
-                <p>Size: 1080x1920px</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="./assets/img/bg/dl-02.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-                <h5>Get your MP4 Wallpaper now!</h5>
-                <p>Size: 1080x1920px</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="./assets/img/bg/dl-03.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-                <h5>Get your emoji stickers now!</h5>
-                <p>Size: 360x360px</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="./assets/img/bg/dl-04.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-                <h5>Update your profile pic now!</h5>
-                <p>Size: 200x200px</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="./assets/img/bg/dl-05.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
-                <h5>Play Eleanor Forte Visual Novel now!</h5>
-                <p>For PC & Mac</p>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="./assets/img/bg/dl-02.jpg" class="d-block w-100" alt="Artwork 2">
+          <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
+            <h5>Size: 1080x1920px</h5>
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="./assets/img/bg/dl-03.jpg" class="d-block w-100" alt="Artwork 3">
+          <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
+            <h5>Size: 360x360px</h5>
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="./assets/img/bg/dl-04.jpg" class="d-block w-100" alt="Artwork 3">
+          <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
+            <h5>Size: 200x200px</h5>
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="./assets/img/bg/dl-05.jpg" class="d-block w-100" alt="Artwork 3">
+          <div class="carousel-caption d-none d-md-block" style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
+            <h5>For PC and Mac</h5>
+            <p></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#artCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#artCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+    <div class="justify-content-center align-items-center flex-column text-center ">
         <br><a href="https://drive.google.com/drive/folders/1vP9KyuqeJ0-9JCSE7ZpAKGM6A8Gb-gkH?usp=sharing"><button type="button" class="btn btn-success btn-lg">Google Drive - Download</button></a>
-        </div>
-      </div>
     </div>
   </div>
-</div>
+<!-- END OF DOWNLOAD SECTION -->
 
-<div class="news-section">
+<!-- START OF NEWS SECTION -->
+<div class="video-background video-background-right">
+<video autoplay muted loop>
+    <source src="./assets/img/bg/05.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <div class="container py-5" id="news">
     <h1 class="text-center mb-4">Latest News</h1>
 
@@ -392,6 +495,7 @@
     </nav>
   </div>
 </div>
+<!-- END OF NEWS SECTION -->
 
 
 
