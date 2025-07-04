@@ -11,6 +11,21 @@
   <!-- Masonry JS -->
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <style>
+
+.about-section {
+  box-shadow: 5px 5px 100px rgba(0, 0, 0, 1);
+  z-index: 10; 
+}
+nav.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+footer {
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+} /*i added a bit of box shadow to the nav to make it look more layered -pepper
+
+
 /* ART GALLERY */
     
     .gallery-section {
@@ -32,14 +47,15 @@
       padding: 60px 0;
     }
 
- */
-
-    /* Optional: Semi-transparent overlay for readability */
-    .gallery-overlay {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 30px;
-      border-radius: 15px;
-    }
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
 
     /* Image hover effect */
     .gallery-img {
@@ -117,6 +133,17 @@
       color: gray;
     }
 
+    .news-section.video-background.video-background-right {
+      background-image: url('./assets/img/bg/05.gif');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+    }
+
 /* VIDEO */
  .video-background {
   position: relative;
@@ -163,7 +190,7 @@
 
     /* Carousel Image Styling */
     .carousel-item img {
-      max-width: 100%; /*cap the w&h instead of setting them, otherwise the image stretches since it's being forced*/
+      max-width: 100%; /*cap the w&h instead of setting them, otherwise the image stretches since it's being forced -pepper*/
       width: auto;
       height: auto;
       border-radius: 10px;
@@ -174,7 +201,7 @@
     /* Responsive Image Height on Small Screens */
     @media (max-width: 768px) {
       .carousel-item img {
-        /*height: 300px; dont do this, see above for reason*/
+        /*height: 300px; dont do this, see above for reason -pepper*/
       padding-right: clamp(10px, 10vw, 500px); 
       padding-left: clamp(10px, 10vw, 500px); 
       }
@@ -211,25 +238,38 @@
         padding: 10px 20px;
       }
     }
-.text-shadow { /*define text-shadow for other stuff here, i copied it over from other parts*/
+.text-shadow { /*define text-shadow for other stuff here, i copied it over from other parts -pepper*/
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
-.carousel-inner { /*to stop overlapping the indicator thing iwth text*/
-  padding-bottom: 2rem; /* or adjust as needed */
+.carousel-inner { /*to stop overlapping the indicator thing iwth text -pepper*/
+  padding-bottom: 2rem; /* or adjust as needed -pepper*/
 }
 
-.carousel-control-prev-icon, /*for readability of arrows*/
+.carousel-control-prev-icon, /*for readability of arrows -pepper*/
 .carousel-control-next-icon {
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 1));
 }
+
+.gallery-section,
+.gallery-section2,
+.download-section,
+.news-section,
+.video-background.video-background-right {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
   </style>
 
   </head>
   <body>
 
 <!-- START OF NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light" data-bs-theme="light">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" data-bs-theme="light" style = "z-index: 11">
   <div class="container-fluid">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -271,12 +311,14 @@
 <!-- END OF NAVBAR -->
 
 <!-- START OF ABOUT SECTION -->
-<div class="d-flex justify-content-center align-items-center flex-column text-center video-background video-background-left" id="about" style="padding-left:0;padding-right:0;">
+
+<div class="about-section d-flex justify-content-center align-items-center flex-column text-center video-background video-background-left" id="about" style="padding-left:0;padding-right:0;">
 
 <video autoplay muted loop>
     <source src="./assets/img/bg/01.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  
 
     <h1 class="display-2" style="font-weight: bold; color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">#SaveEleanorForte</h1>
       <p style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
@@ -306,10 +348,11 @@
     <source src="./assets/img/bg/03.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-    <h1 class="mb-4">Art Gallery</h1>
+  <div class="background-overlay"></div>
 
-    <!-- Optional overlay for better image contrast -->
-    <div class="container gallery-overlay">
+    <div class="container" style= "z-index: 1;">
+      <h1 class="mb-4">Art Gallery</h1>
+
       <div class="row" data-masonry='{"percentPosition": true }'>
 
         <!-- Art Card 1 -->
@@ -370,11 +413,10 @@
     <source src="./assets/img/bg/03.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <div class="background-overlay"></div>
 
-    <h1 class="mb-4">YouTube Song Gallery</h1>
-
-    <!-- Optional overlay for better readability -->
-    <div class="container gallery-overlay">
+    <div class="container" style= "z-index: 1;">
+      <h1 class="mb-4">YouTube Song Gallery</h1>
       <div class="row">
 
         <!-- Video Card 1 -->
@@ -408,13 +450,10 @@
               <iframe src="https://www.youtube.com/embed/_P0SEe1tn-M" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="card-body text-center">
-              <h5 class="card-title">ELEANOR (Piano Mix) / AKACHROMA feat. Eleanor Forte (Synthesizer V Song)
-</h5>
+              <h5 class="card-title">ELEANOR (Piano Mix) / AKACHROMA feat. Eleanor Forte (Synthesizer V Song)</h5>
             </div>
           </div>
         </div>
-
-
     <div class="justify-content-center align-items-center flex-column text-center ">
         <br><a href="browse-song.html"><button type="button" class="btn btn-success btn-lg">Browse Entire Song Catalog</button></a>
     </div>
@@ -427,9 +466,11 @@
 <!-- END OF VIDEO SECTION -->
 
 <!-- START OF DOWNLOAD SECTION -->
-<div class="download-section" id="download">
-  <h1 class="text-center mb-4">Downloads</h1>
+<div class="download-section position-relative" id="download">
+  <div class="background-overlay"></div>
 
+  <div class="container position-relative" style="z-index: 1;">
+    <h1 class="text-center mb-4">Downloads</h1>
   <!-- Bootstrap Carousel -->
   <div id="artCarousel" class="carousel slide" data-bs-ride="carousel">
 
@@ -499,23 +540,32 @@
 
   </div>
 
-  <div class="justify-content-center align-items-center flex-column text-center ">
-    <br>
-    <a href="https://drive.google.com/drive/folders/1vP9KyuqeJ0-9JCSE7ZpAKGM6A8Gb-gkH?usp=sharing">
-      <button type="button" class="btn btn-success btn-lg">Google Drive - Download</button>
-    </a>
+    <div class="justify-content-center align-items-center flex-column text-center mt-4">
+      <a href="https://drive.google.com/drive/folders/1vP9KyuqeJ0-9JCSE7ZpAKGM6A8Gb-gkH?usp=sharing">
+        <button type="button" class="btn btn-success btn-lg">Google Drive - Download</button>
+      </a>
+    </div>
   </div>
 </div>
+
 <!-- END OF DOWNLOAD SECTION -->
 
 <!-- START OF NEWS SECTION -->
-<div class="video-background video-background-right">
+<div class = "news-section video-background video-background-right">
+<!--
 <video autoplay muted loop>
-    <source src="./assets/img/bg/05.mp4" type="video/mp4">
+    <source src="./assets/img/bg/05.mp4" type="video/mp4">*/
     Your browser does not support the video tag.
   </video>
+-->
+
+
+<!--commented the above out, since the parrallax dont work with video, and gif loads faster anyways -pepper -->
+
+  <div class="background-overlay"></div>
+  <div class="container" style= "z-index: 1;">
+  <h1 class="text-center mb-4" style="z-index: 1; position: relative">Latest News</h1>
   <div class="container py-5" id="news">
-    <h1 class="text-center mb-4">Latest News</h1>
 
     <!-- News List -->
     <div id="news-container" class="list-group mb-4">
@@ -534,20 +584,22 @@
       </ul>
     </nav>
   </div>
+  </div>
 </div>
+
 <!-- END OF NEWS SECTION -->
 
 
 
 <!-- START OF FOOTER -->
 <div class="container"> 
-  <footer class="py-3 my-4"> 
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3"> 
+  <footer class="py-3">  <!--you dont want the margine for this, i've removed it -Pepper -->
     <!--
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3"> 
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">TOS</a></li> 
-    -->
     </ul> 
-    <p class="text-center text-body-secondary">Site designed by <b>Gaizer Dragon</b> (2025). App icon by <a href="https://icons8.com/">icons8</a>. Background art by <a href="https://www.freepik.com">Freepik</a></p> </footer> 
+    -->
+    <p class="text-center text-body-secondary">Site designed by <b>Gaizer Dragon</b> & <b>椒盐 PepperSalt</b> (2025). App icon by <a href="https://icons8.com/">icons8</a>. Background art by Gaizer Dragon</p> </footer>  <!--i hope you dont mind me adding myself here -pepper-->
 </div>
 <!-- END OF FOOTER -->
 
