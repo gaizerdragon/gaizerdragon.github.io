@@ -15,11 +15,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script> <!--we need the js as well for this to work -Pepper -->
 
   <!-- Masonry JS -->
-  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
   <!-- images loade -->
 
-  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
   
   <style>
@@ -58,6 +58,17 @@ nav.navbar {
       min-height: 100vh;
       padding: 60px 0;
     }
+
+.gallery-section,
+.gallery-section2,
+.download-section,
+.news-section,
+.video-background.video-background-right {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
  */
 
@@ -269,19 +280,19 @@ nav.navbar {
     <div class="collapse navbar-collapse container-fluid justify-content-center" id="navbarTogglerDemo03">
       <ul class="navbar-nav mb-2 mb-lg-0 fs-4">
         <li class="nav-item">
-          <a class="nav-link" href="index.html#about">About</a>
+          <a class="nav-link" href="index.html#about" style = "font-family: 'VCROSDMONO', sans-serif;">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Art</a>
+          <a class="nav-link active" aria-current="page" href="#" style = "font-family: 'VCROSDMONO', sans-serif;">Art</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="browse-song.html">Music</a>
+          <a class="nav-link" href="index.html#music" style = "font-family: 'VCROSDMONO', sans-serif;">Music</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html#download">Download</a>
+          <a class="nav-link" href="index.html#download" style = "font-family: 'VCROSDMONO', sans-serif;">Download</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html#news">News</a>
+          <a class="nav-link" href="index.html#news" style = "font-family: 'VCROSDMONO', sans-serif;">News</a>
         </li>
       </ul>
     </div>
@@ -299,14 +310,16 @@ nav.navbar {
 <!-- START OF GALLERY SECTION -->
  <div class="gallery-section d-flex justify-content-center align-items-center flex-column text-center video-background" id="art" >
 
+<!--
 <video autoplay muted loop>
     <source src="./assets/img/bg/03.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+-->
   <div class="background-overlay"></div>
 
     <div class="container" style= "z-index: 1;">
-      <h1 class="mb-4">Art Gallery</h1>
+      <h1 class="mb-4" style = "font-family: 'VCROSDMONO', sans-serif;">Art Gallery</h1>
 
 
       

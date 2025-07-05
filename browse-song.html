@@ -13,7 +13,7 @@
   <!-- Lightbox2 CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
   <!-- Masonry JS -->
-  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <style>
 
 
@@ -52,14 +52,16 @@ nav.navbar {
       padding: 60px 0;
     }
 
- */
-
-    /* Optional: Semi-transparent overlay for readability */
-    .gallery-overlay {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 30px;
-      border-radius: 15px;
-    }
+.gallery-section,
+.gallery-section2,
+.download-section,
+.news-section,
+.video-background.video-background-right {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
     /* Image hover effect */
     .gallery-img {
@@ -249,19 +251,19 @@ nav.navbar {
     <div class="collapse navbar-collapse container-fluid justify-content-center" id="navbarTogglerDemo03">
       <ul class="navbar-nav mb-2 mb-lg-0 fs-4">
         <li class="nav-item">
-          <a class="nav-link" href="index.html#about">About</a>
+          <a class="nav-link" href="index.html#about" style = "font-family: 'VCROSDMONO', sans-serif;">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="browse-art.html">Art</a>
+          <a class="nav-link" href="index.html#art" style = "font-family: 'VCROSDMONO', sans-serif;">Art</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Music</a>
+          <a class="nav-link active" aria-current="page" href="#" style = "font-family: 'VCROSDMONO', sans-serif;">Music</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html#download">Download</a>
+          <a class="nav-link" href="index.html#download" style = "font-family: 'VCROSDMONO', sans-serif;">Download</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html#news">News</a>
+          <a class="nav-link" href="index.html#news" style = "font-family: 'VCROSDMONO', sans-serif;">News</a>
         </li>
       </ul>
     </div>
@@ -279,95 +281,18 @@ nav.navbar {
 <!-- START OF VIDEO SECTION -->
  <div class="gallery-section2 d-flex justify-content-center align-items-center flex-column text-center video-background" id="music">
 
+  <!--
 <video autoplay muted loop>
     <source src="./assets/img/bg/03.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+-->
     <div class = "background-overlay"></div>
     <div class="container" style= "z-index: 1;">
-    <h1 class="mb-4">YouTube Song Gallery</h1>
+    <h1 class="mb-4" style = "font-family: 'VCROSDMONO', sans-serif;">Song Gallery</h1>
 
-    <!-- Optional overlay for better readability -->
     <div class="container gallery-overlay">
-      <div class="row">
-
-        <!-- Video Card 1 -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card video-card">
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/CyzdIzCmDig" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Like I Want It ft. Eleanor Forte Lite 【SynthV Original】</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- Video Card -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card video-card">
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/bwkBUGhu9Og" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">【Eleanor Forte】It only rains in Glasgow【SynthV Original】</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- Video Card -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card video-card">
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/_P0SEe1tn-M" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">ELEANOR (Piano Mix) / AKACHROMA feat. Eleanor Forte (Synthesizer V Song)
-</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- Video Card -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card video-card">
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/haKcGgKwT9U" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">ELEANOR_LIVES_FOREVER_!!1! / ft.Eleanor Forte</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- Video Card -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card video-card">
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/k1FI3az99Iw" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">BIRDBRAIN【Eleanor Forte AI & Lite SynthVカバー Cover】</h5>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Video Card -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card video-card">
-            <div class="video-container">
-              <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2068129992&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Dysfunctional (ft. Eleanor Forte)</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- Add more video cards here -->
-
-      </div>
+      <div class="row" id="video-gallery-container"></div>
       </div>
     </div>
   </div>
@@ -389,83 +314,14 @@ nav.navbar {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <!-- Lightbox2 JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
 
-  <!-- News Pagination Script -->
-  <script>
-    const newsData = [
-      // Page 1
-      [
-        { image: './assets/img/artists/1.jpg', date: 'July 2, 2025', title: 'Save Eleanor Forte Website is Up!', description: 'Submit your songs and art on our Discord Server in the Save-Eleanor-Forte Channel' },
-        { image: './assets/img/artists/anicute.jpg', date: 'July 1, 2025', title: 'ANiCUTE email reply', description: 'ANiCUTE is planning to make major adjustments to their business, so they will temporarily close all purchase channels for their product lines. There will be new information in July. If you have any purchase needs in the near future, please reply to let them know. They will provide you with the previous RMB price information for your product purchases, and provide the payment codes for Alipay and WeChat.' },
-        { image: './assets/img/artists/grave.jpg', date: 'June 29, 2025', title: 'Eleanor buy now button removed from Dreamtonics', description: 'Eleanor is gone from the voices list on the dreamtonics site, and her "buy now" button is gone, and animen is down!' }
-      ],
-      // Page 2
-      [
-        { image: './assets/img/artists/1.jpg', date: 'August 18, 2018', title: 'Eleanor\'s birthday is on 8/18', description: 'Long live the queen!' },
-        { image: './assets/img/artists/1.jpg', date: '???', title: 'Title', description: '...' },
-        { image: './assets/img/artists/1.jpg', date: '???', title: 'Title', description: '...' }
-      ]
-    ];
-
-    let currentPage = 0;
-
-    function loadNews(page) {
-      const newsContainer = document.getElementById('news-container');
-      newsContainer.innerHTML = '';
-
-      newsData[page].forEach(item => {
-        newsContainer.innerHTML += `
-          <a class="list-group-item list-group-item-action d-flex align-items-center news-item mb-3">
-            <img src="${item.image}" alt="${item.title}" class="news-image me-3">
-            <div>
-              <div class="news-date mb-1">${item.date}</div>
-              <h5 class="mb-1">${item.title}</h5>
-              <p class="mb-0">${item.description}</p>
-            </div>
-          </a>
-        `;
-      });
-
-      // Disable previous button on first page
-      document.getElementById('prev-btn').classList.toggle('disabled', page === 0);
-      // Disable next button on last page
-      document.getElementById('next-btn').classList.toggle('disabled', page === newsData.length - 1);
-    }
-
-    function changePage(page) {
-      if (page < 0 || page >= newsData.length) return;
-      currentPage = page;
-      loadNews(currentPage);
-    }
-
-    // Initialize
-    loadNews(currentPage);
-  </script>
-
-    <!-- Countdown Script -->
-  <script>
-    // Set target date
-    const targetDate = new Date("2025-08-18T00:00:00").getTime();
-
-    // Update countdown every second
-    const countdownTimer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance < 0) {
-        clearInterval(countdownTimer);
-        document.getElementById("countdown").innerHTML = "Time's Up!";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML = `${days}D ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
-  </script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    loadVideos();
+  });
+</script>
+  <script src="SongLoader.js"></script>
 
   </body>
 </html>
