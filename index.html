@@ -14,6 +14,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
   <!-- Masonry JS -->
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+
   <style>
 
 .about-section {
@@ -282,6 +286,7 @@ footer {
   </style>
 
   </head>
+
   <body>
 
 <!-- START OF NAVBAR -->
@@ -369,57 +374,19 @@ footer {
   <div class="background-overlay"></div>
 
     <div class="container" style= "z-index: 1;">
-      <h1 class="mb-4">Art Gallery</h1>
-
-      <div class="row" data-masonry='{"percentPosition": true }'>
-
-        <!-- Art Card 1 -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <a href="./assets/img/gallery/1-gaizer.jpg" data-lightbox="gallery" data-title="Artwork 1">
-            <div class="card">
-              <img src="./assets/img/gallery/1-gaizer.jpg" class="card-img-top gallery-img gallery-shadow" alt="Artwork 1">
-            </div>
-          </a>
-          <div class="artist-name">
-            <a href="https://x.com/GaizerDragon">Artist: Gaizer Dragon</a>
-          </div>
-        </div>
-
-        <!-- Art Card -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <a href="./assets/img/gallery/2-llunaariaa.jpg" data-lightbox="gallery" data-title="Artwork 2">
-            <div class="card">
-              <img src="./assets/img/gallery/2-llunaariaa.jpg" class="card-img-top gallery-img gallery-shadow" alt="Artwork 2">
-            </div>
-          </a>
-          <div class="artist-name">
-            <a href="https://x.com/llunaariaa">Artist: X/Twitter - llunaariaa</a>
-            <br>
-            <a href="https://toyhou.se/llunaariaa">Toyhouse - llunaariaa</a>
-          </div>
-        </div>
-
-        <!-- Art Card -->
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <a href="./assets/img/gallery/3-phobos.jpg" data-lightbox="gallery" data-title="Artwork 3">
-            <div class="card">
-              <img src="./assets/img/gallery/3-phobos.jpg" class="card-img-top gallery-img gallery-shadow" alt="Artwork 3">
-            </div>
-          </a>
-          <div class="artist-name">
-            <a href="https://x.com/Phobos__Anomaly">Artist: X/Twitter - Phobos Anomaly</a>
-            <br>
-            <a href="https://bsky.app/profile/phobosanomaly.bsky.social">Bluesky - Phobos Anomaly</a>
-          </div>
-        </div>
-
-        <!-- Add more cards here -->
-
-    <div class="justify-content-center align-items-center flex-column text-center ">
-        <br><a href="browse-art.html"><button type="button" class="btn btn-success btn-lg">Browse Entire Art Catalog</button></a>
+      <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+      <h1 class="mb-0 text-white text-shadow">Art Gallery</h1>
+      <a href="browse-art.html" class="ms-auto">
+        <button type="button" class="btn btn-success btn-lg">Browse Entire Art Catalog</button>
+      </a>
+        <button type="button" class="btn btn-outline-light btn-sm" onclick="loadRandomArt()">Shuffle Art</button>
     </div>
 
-      </div>
+
+<div id="shuffled-art" class="row mt-4"></div>
+
+    <div class="row" id="random-art-section" data-masonry='{"percentPosition": true }'></div>
+
     </div>
   </div>
 <!-- END OF GALLERY SECTION -->
@@ -635,7 +602,7 @@ footer {
     
       // Page 1
       [
-        { image: './assets/img/artists/1.jpg', date: 'July 2, 2025', title: 'Save Eleanor Forte Website is Up!', description: 'Submit your songs and art on our Discord Server in the Save-Eleanor-Forte Channel! In case the July announcement is something bad, we need to demonstrate Eleanor\'s worth via the community. If it isn\'t, then we\'d have more reason to celebrate.' },
+        { image: './assets/img/artists/1.jpg', date: 'July 2, 2025', title: 'Save Eleanor Forte Website is Up!', description: 'Submit your songs and art on our Discord Server in the Save-Eleanor-Forte Channel! In case the July announcement is something bad, we need to demonstrate Eleanor\'s worth via the community. If it isn\'t, then we\'d have more reason to celebrate!' },
         { image: './assets/img/artists/anicute.jpg', date: 'July 1, 2025', title: 'ANiCUTE email reply', description: 'ANiCUTE is planning to make major adjustments to their business, so they will temporarily close all purchase channels for their product lines. There will be new information in July. If you have any purchase needs in the near future, please reply to let them know. They will provide you with the previous price information for your product purchases, and provide means of payment.' },
         { image: './assets/img/artists/dt.png', date: 'June 30, 2025', title: 'Dreamtonics email reply', description: 'Confirmation of discontinuation of Eleanor\'s sale posted on Bsky' },
         { image: './assets/img/artists/grave.jpg', date: 'June 29, 2025', title: 'Eleanor buy now button removed from Dreamtonics', description: 'Eleanor is gone from the voices list on the dreamtonics site, and her "buy now" button is gone, and animen is down!' }
@@ -709,6 +676,61 @@ footer {
       document.getElementById("countdown").innerHTML = `${days}D ${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
   </script>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', loadAllArt);
+
+</script>
+
+<script>
+  async function loadRandomArt() {
+
+    try {
+      const response = await fetch('art-data.json');
+      const data = await response.json();
+
+      //Shuffle and take 3
+      const selected = data.sort(() => 0.5 - Math.random()).slice(0, 3);
+      const container = document.getElementById('random-art-section');
+      container.innerHTML = '';
+
+
+      selected.forEach(art => {
+        const col = document.createElement('div');
+        col.className = 'col-sm-6 col-lg-4 mb-4';
+        col.innerHTML = `
+          <a href="${art.image}" data-lightbox="gallery" data-title="${art.title}">
+            <div class="card">
+              <img src="${art.image}" class="card-img-top gallery-img gallery-shadow" alt="${art.title}">
+            </div>
+          </a>
+          <div class="artist-name">
+            <a href="${art.link}" target="_blank">Artist: ${art.artist}</a>
+            ${art.extra ? `<br><a href="${art.extra}" target="_blank">More</a>` : ''}
+          </div>
+        `;
+        container.appendChild(col);
+      });
+
+      //lightbox.init(); calling this will cause "lightbox is not defined" -Pepper
+
+
+    imagesLoaded(container, function() {
+      new Masonry(container, {
+        itemSelector: '.col-sm-6',
+        percentPosition: true
+      });
+    });
+
+    } catch (error) {
+      console.error('Error loading art:', error);
+      document.getElementById('random-art-section').innerHTML = '<p class="text-white">Error loading art.</p>';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadRandomArt);
+</script>
+
 
   </body>
 </html>
