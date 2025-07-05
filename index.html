@@ -20,10 +20,18 @@
 
   <style>
 
+  @font-face {
+    font-family: 'VCROSDMONO';
+    src: url('./assets/fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 .about-section {
   box-shadow: 5px 5px 50px rgba(0, 0, 0, 1);
   z-index: 10; 
 }
+
 nav.navbar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -299,25 +307,25 @@ footer {
     </button>
 
   		<a class="navbar-brand" href='https://saveeleanorforte.info/'>
-  			<img src="./assets/img/icons/logo.png" alt="Save Eleanor Forte">
+      <img src="./assets/img/icons/logo_large.png" alt="Save Eleanor Forte" style="height: 42px; width: auto;">
   		</a>  	 
 
     <div class="collapse navbar-collapse container-fluid justify-content-center" id="navbarTogglerDemo03">
       <ul class="navbar-nav mb-2 mb-lg-0 fs-4">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#about">About</a>
+          <a class="nav-link active" aria-current="page" href="#about" style = "font-family: 'VCROSDMONO', sans-serif;">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#art">Art</a>
+          <a class="nav-link" href="#art" style = "font-family: 'VCROSDMONO', sans-serif;">Art</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#music">Music</a>
+          <a class="nav-link" href="#music" style = "font-family: 'VCROSDMONO', sans-serif;">Music</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#download">Download</a>
+          <a class="nav-link" href="#download" style = "font-family: 'VCROSDMONO', sans-serif;">Download</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#news">News</a>
+          <a class="nav-link" href="#news" style = "font-family: 'VCROSDMONO', sans-serif;">News</a>
         </li>
       </ul>
     </div>
@@ -342,8 +350,8 @@ footer {
   </video>
   
 
-    <h1 class="display-2" style="font-weight: bold; color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">#SaveEleanorForte</h1>
-      <p style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;">
+    <h1 class="display-2" style=" font-weight: bold; color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">#SaveEleanorForte</h1>
+      <p style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222,  2px  2px 6px rgba(0, 0, 0, 0.8);;">
             <br><b>Eleanor Forte's birthday is on 8/18 - MAKE ART! MUSIC! BE ALIVE!<br>
             Be part of the celebration! <br>
             Submit your songs and artwork on our Discord Server in the #save-eleanor-forte channel!</b>
@@ -354,7 +362,7 @@ footer {
 
   <div class="outer-box">
     <div class="inner-box">
-      <div id="countdown" class="countdown">Loading...</div>
+      <div id="countdown" class="countdown" style = "font-family: 'VCROSDMONO', sans-serif;">Loading...</div>
     </div>
   </div>
 
@@ -373,7 +381,7 @@ footer {
 
   <div class="container" style="z-index: 1;">
     <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
-      <h1 class="mb-0 text-white text-shadow">Song Gallery</h1>
+      <h1 class="mb-0 text-white text-shadow" style = "font-family: 'VCROSDMONO', sans-serif;">Song Gallery</h1>
 
       <a href="browse-song.html" class="ms-auto">
         <button type="button" class="btn btn-success btn-lg">Browse All Songs</button>
@@ -399,7 +407,7 @@ footer {
   <div class="background-overlay"></div>
     <div class="container" style= "z-index: 1;">
       <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
-      <h1 class="mb-0 text-white text-shadow">Art Gallery</h1>
+      <h1 class="mb-0 text-white text-shadow" style = "font-family: 'VCROSDMONO', sans-serif;">Art Gallery</h1>
       <a href="browse-art.html" class="ms-auto">
         <button type="button" class="btn btn-success btn-lg">Browse All Art</button>
       </a>
@@ -421,7 +429,7 @@ footer {
   <div class="background-overlay"></div>
 
   <div class="container position-relative" style="z-index: 1;">
-    <h1 class="text-center mb-4">Downloads</h1>
+    <h1 class="text-center mb-4" style = "font-family: 'VCROSDMONO', sans-serif;">Downloads</h1>
   <!-- Bootstrap Carousel -->
   <div id="artCarousel" class="carousel slide" data-bs-ride="carousel">
 
@@ -515,7 +523,7 @@ footer {
 
   <div class="background-overlay"></div>
   <div class="container" style= "z-index: 1;">
-  <h1 class="text-center mb-4" style="z-index: 1; position: relative">Latest News</h1>
+  <h1 class="text-center mb-4" style="z-index: 1; position: relative; font-family: 'VCROSDMONO', sans-serif;">Latest News</h1>
   <div class="container py-5" id="news">
 
     <!-- News List -->
