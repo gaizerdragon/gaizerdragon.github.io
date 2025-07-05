@@ -364,11 +364,13 @@ nav.navbar {
       });
 
       //lightbox.init();
+
+    imagesLoaded(container, function() {
       new Masonry(container, {
         itemSelector: '.col-sm-6',
         percentPosition: true
       });
-
+    });
     } catch (error) {
       console.error('Error loading art:', error);
       document.getElementById('all-art-section').innerHTML = '<p class="text-white">Error loading art.</p>';
