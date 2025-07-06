@@ -387,7 +387,7 @@ footer {
         <button type="button" class="btn btn-success btn-lg">Browse All Songs</button>
       </a>
 
-      <button type="button" class="btn btn-outline-light btn-sm" onclick="loadVideos(true, 'video-gallery-container')">Shuffle Songs</button>
+      <button type="button" class="btn btn-outline-light btn-sm" onclick="shuffleVideos()">Shuffle Songs</button>
     </div>
 
     <div class="row mt-4" id="video-gallery-container"></div>
@@ -706,6 +706,15 @@ footer {
   document.addEventListener('DOMContentLoaded', loadRandomArt);
 </script>
   <script src="SongLoader.js"></script>
+
+<script>
+  async function shuffleVideos() {
+    const isMobile = window.innerWidth <= 768;
+    const limit = isMobile ? 3 : 6;
+    loadVideos(true, limit);
+  }
+</script>
+
 
 <script>
   const isMobile = window.innerWidth <= 768;
