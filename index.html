@@ -366,6 +366,10 @@ footer {
     </div>
   </div>
 
+  <br><br>
+  <h1 style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222,  2px  2px 6px rgba(0, 0, 0, 0.8);" id="count_song"></h1>
+  <h1 style="color:white; text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222,  2px  2px 6px rgba(0, 0, 0, 0.8);" id="count_art"></h1>
+
 </div>
 <!-- END OF ABOUT SECTION -->
 
@@ -721,5 +725,46 @@ footer {
   const limit = isMobile ? 3 : 6;
   loadVideos(false, limit);
 </script>
+
+  <script>
+    fetch('music-data.json') // Replace with your actual JSON file path
+      .then(response => response.json())
+      .then(data => {
+        let count = 0;
+
+        if (Array.isArray(data)) {
+          count = data.length;
+        } else if (typeof data === 'object' && data !== null) {
+          count = Object.keys(data).length;
+        }
+
+        document.getElementById('count_song').innerText = `Total Songs Submitted: ${count}`;
+      })
+      .catch(error => {
+        console.error('Error loading JSON:', error);
+        document.getElementById('count_song').innerText = 'Error loading JSON';
+      });
+  </script>
+
+  <script>
+    fetch('art-data.json') // Replace with your actual JSON file path
+      .then(response => response.json())
+      .then(data => {
+        let count = 0;
+
+        if (Array.isArray(data)) {
+          count = data.length;
+        } else if (typeof data === 'object' && data !== null) {
+          count = Object.keys(data).length;
+        }
+
+        document.getElementById('count_art').innerText = `Total Artwork Submitted: ${count}`;
+      })
+      .catch(error => {
+        console.error('Error loading JSON:', error);
+        document.getElementById('count_art').innerText = 'Error loading JSON';
+      });
+  </script>
+
   </body>
 </html>
