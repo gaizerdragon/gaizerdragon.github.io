@@ -24,6 +24,12 @@
         "title": "Artwork 4",
         "artist": "Snackbar P",
         "link": "https://x.com/x01songs"
+    },
+    {
+        "image": "./assets/img/gallery/5-MyouTrix.jpg",
+        "title": "Artwork 5",
+        "artist": "MyouTrix",
+        "link": "https://x.com/myoutrix",
+        "extra": "https://myoutrix.carrd.co/"
     }
 ]
-
