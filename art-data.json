@@ -31,5 +31,12 @@
         "artist": "MyouTrix",
         "link": "https://x.com/myoutrix",
         "extra": "https://myoutrix.carrd.co/"
+    },
+    {
+        "image": "./assets/img/gallery/6-Ernata.jpg",
+        "title": "Artwork 6",
+        "artist": "Ernata",
+        "link": "https://x.com/ErnativeAlt",
+        "extra": "https://linktr.ee/ernativealt"
     }
 ]
