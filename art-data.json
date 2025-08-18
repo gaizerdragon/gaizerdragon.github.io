@@ -38,5 +38,11 @@
         "artist": "Ernata",
         "link": "https://x.com/ErnativeAlt",
         "extra": "https://linktr.ee/ernativealt"
+    },
+    {
+        "image": "./assets/img/gallery/7-sandx.jpg",
+        "title": "Artwork 7",
+        "artist": "sandx",
+        "link": "https://x.com/sandx0819"
     }
 ]
