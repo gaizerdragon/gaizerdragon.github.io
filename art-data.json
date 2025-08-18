@@ -44,5 +44,12 @@
         "title": "Artwork 7",
         "artist": "sandx",
         "link": "https://x.com/sandx0819"
+    },
+    {
+        "image": "./assets/img/gallery/8-anonymous.jpg",
+        "title": "Artwork 8",
+        "artist": "Anonymous",
+        "link": "NA"
     }
+    
 ]
