@@ -50,6 +50,13 @@
         "title": "Artwork 8",
         "artist": "Anonymous",
         "link": "NA"
+    },
+    {
+        "image": "./assets/img/gallery/9-phobos.jpg",
+        "title": "Artwork 9",
+        "artist": "Phobos Anomaly",
+        "link": "https://x.com/Phobos__Anomaly",
+        "extra": "https://bsky.app/profile/phobosanomaly.bsky.social"
     }
     
 ]
